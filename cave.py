@@ -28,22 +28,33 @@ while start_game_loop < 1:
 ##Start Room 1 Loop
 
 print("You're in a dark room with a torch and a match, what's next?")
-room1torch = input("")
-room1torch = room1torch.split()
-room1torch = list(room1torch)
+room1talk = input("")
 room1_loop = 0
+torch_loop = 0
+match_loop = 0
 
 torch = 0
 match = 0
 
 while room1_loop < 1:
-    for i in range(0, len(room1torch)):
-        if room1torch[i] == "torch" and torch == 0:
-            print("You grab the torch")
-            torch += 1
-        elif torch == 1:
-            print("You have the torch already.")
-        elif room1torch[i] == "match" and match == 0:
-            print("You grab the match")
-        elif match == 1:
-            print("You have the match already.")
+        if "torch" in room1talk:
+            while torch_loop == 0:
+                print("You grab the torch")
+                if match == 0:
+                    print("You're in a dark room with just a match, what's next?")
+                torch += 1
+                torch_loop += 1
+                continue
+            if torch == 2:
+                print("You have the torch already.")
+                torch_loop += 1
+        elif "match" in room1talk:
+            while match_loop == 0:
+                print("You grab the match")
+                if torch == 0:
+                    print("You're in a dark room with just a torch, what's next?")
+                match += 1
+                match_loop += 1
+                continue
+            if match == 1:
+                print("You have the match already.")
