@@ -1,3 +1,5 @@
+#Created by Ashton Richards 2018
+
 start_game_loop = 0
 name_loop = 0
 while start_game_loop < 1:
@@ -67,6 +69,18 @@ while room1_loop < 1:
             else:
                 print("You have the match already.")
                 match_loop += 1
+    elif "search" in room1talk:
+        if torch == 1:
+            print("You use the torch to scour the walls and find a small stone button. What will you do?")
+            room1button = input("")
+            if "push" in room1button:
+                print("You push the button, revealing a door on the opposite side of the room. You continue through the next passage.")
+                room1_loop += 1
+            else:
+                print("You turn back, without pushing the button.")
+                continue
+        else:
+            print("You need a light source to search the room.")
     else:
         print("You cannot do that.")
         continue
