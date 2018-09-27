@@ -27,34 +27,46 @@ while start_game_loop < 1:
 
 ##Start Room 1 Loop
 
-print("You're in a dark room with a torch and a match, what's next?")
-room1talk = input("")
 room1_loop = 0
-torch_loop = 0
-match_loop = 0
 
 torch = 0
 match = 0
 
 while room1_loop < 1:
-        if "torch" in room1talk:
-            while torch_loop == 0:
+    torch_loop = 0
+    match_loop = 0
+    
+    if torch == 0 and match == 0:
+        print("You're in a dark room with a torch and a match, what's next?")
+        room1talk = input("")
+    elif torch == 0 and match == 1:
+        print("The dark room contains only a torch now. What's next?")
+        room1talk = input("")
+    elif torch == 1 and match == 0:
+        print("The room is now completely lit by the torch, but a match still remains. What's next?")
+        room1talk = input("")
+    elif torch == 1 and match == 1:
+        print("You should probably search for a door, since you have the items in the room.")
+        room1talk = input("")
+        
+    if "torch" in room1talk:
+        while torch_loop == 0:
+            if torch == 0:
                 print("You grab the torch")
-                if match == 0:
-                    print("You're in a dark room with just a match, what's next?")
                 torch += 1
                 torch_loop += 1
-                continue
-            if torch == 2:
+            else:
                 print("You have the torch already.")
                 torch_loop += 1
-        elif "match" in room1talk:
-            while match_loop == 0:
+    elif "match" in room1talk:
+        while match_loop == 0:
+            if match == 0:
                 print("You grab the match")
-                if torch == 0:
-                    print("You're in a dark room with just a torch, what's next?")
                 match += 1
                 match_loop += 1
-                continue
-            if match == 1:
+            else:
                 print("You have the match already.")
+                match_loop += 1
+    else:
+        print("You cannot do that.")
+        continue
