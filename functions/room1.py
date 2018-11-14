@@ -54,7 +54,6 @@ def room1():
                 print("You need a light source to search the room.")
         elif room1talk == "m":
             menu()
-            break
         else:
             print("You cannot do that.")
             continue

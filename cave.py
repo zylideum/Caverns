@@ -11,3 +11,7 @@ reset()
 ##Start Room 1 Loop
 
 room1()
+
+##Start Room 2
+
+room2()
