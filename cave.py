@@ -1,4 +1,5 @@
-#Created by Ashton Richards 2018
+#Created by Ashton Richards & Brian Tigges 2018
+#CS118
 from functions.menu import menu
 from functions.room1 import room1
 from functions.reset import reset
