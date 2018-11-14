@@ -45,11 +45,11 @@ def room1():
                 else:
                     print("You have the match already.")
                     match_loop += 1
-        elif "search" in room1talk:
+        elif "door" in room1talk:
             if torch == 1:
                 print("You use the torch to scour the walls and find a small stone button. What will you do? Keep in mind you will probably not be able to return. ")
                 room1button = input("")
-                if "push" in room1button:
+                if "push" or "press" in room1button:
                     print("You push the button, revealing a door on the opposite side of the room. You continue through the next passage.")
                     score(500)
                     break

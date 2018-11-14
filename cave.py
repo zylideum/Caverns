@@ -3,6 +3,7 @@ from functions.menu import menu
 from functions.room1 import room1
 from functions.reset import reset
 from functions.room2 import room2
+from functions.score import plot
 
 menu()
 reset()
@@ -16,3 +17,7 @@ room1()
 ##Start Room 2 Loop
 
 room2()
+
+##Opens final plot
+
+plot()

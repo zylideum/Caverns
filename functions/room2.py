@@ -92,7 +92,6 @@ def room2():
             if room3_key == 1:
                 print("You find a keyhole in the floor and continue to a secret treasure room.")
                 score(500)
-                #room3()
                 break
             else:
                 print("You feel around and find a keyhole, but you have nothing to open it.")
