@@ -1,9 +1,12 @@
 from functions.menu import menu
+from functions.score import score
+
 def room1():
     room1_loop = 0
-
+    
     torch = 0
     match = 0
+
     
     while room1_loop < 1:
         torch_loop = 0
@@ -28,6 +31,7 @@ def room1():
                     print("You grab the torch")
                     torch += 1
                     torch_loop += 1
+                    score(100)
                 else:
                     print("You have the torch already.")
                     torch_loop += 1
@@ -37,16 +41,18 @@ def room1():
                     print("You grab the match")
                     match += 1
                     match_loop += 1
+                    score(400)
                 else:
                     print("You have the match already.")
                     match_loop += 1
         elif "search" in room1talk:
             if torch == 1:
-                print("You use the torch to scour the walls and find a small stone button. What will you do?")
+                print("You use the torch to scour the walls and find a small stone button. What will you do? Keep in mind you will probably not be able to return. ")
                 room1button = input("")
                 if "push" in room1button:
                     print("You push the button, revealing a door on the opposite side of the room. You continue through the next passage.")
-                    room1_loop += 1
+                    score(500)
+                    break
                 else:
                     print("You turn back, without pushing the button.")
                     continue

@@ -2,6 +2,7 @@
 from functions.menu import menu
 from functions.room1 import room1
 from functions.reset import reset
+from functions.room2 import room2
 
 menu()
 reset()
@@ -12,6 +13,6 @@ reset()
 
 room1()
 
-##Start Room 2
+##Start Room 2 Loop
 
 room2()

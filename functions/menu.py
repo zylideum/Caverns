@@ -6,7 +6,7 @@ def menu():
     while start_game_loop < 1:
         while name_loop < 1:
             print("Welcome to Caverns, poor soul.")
-            print("Press m to return to the menu and change your name at any time.")
+            print("Press m to return to the menu at any time.")
             print("This will not reset your progress, and you will start where you left off.")
             print("What is your name?")
             name = input("")
